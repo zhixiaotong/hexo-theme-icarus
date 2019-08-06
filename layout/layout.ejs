@@ -16,10 +16,19 @@
         }
         return '';
     } %>
+    <% function col(){
+        if(!is_post()){
+            return main_column_class();
+            }
+        else{
+            return 'is-6-tablet is-6-desktop is-9-widescreen';
+            } 
+    } %>
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div>
+                <!-- <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div> -->
+                <div class="column <%= col() %> has-order-2 column-main"><%- body %></div>
                 <%- partial('common/widget', { position: 'left' }) %>
                 <%- partial('common/widget', { position: 'right' }) %>
             </div>
@@ -31,5 +40,6 @@
     <% if (has_config('search.type')) { %>
     <%- partial('search/' + get_config('search.type')) %>
     <% } %>
+	<script src="//code.tidio.co/vmzwba6gigc2mcfmxcwqsdre3iwzldsp.js"></script>
 </body>
 </html>
