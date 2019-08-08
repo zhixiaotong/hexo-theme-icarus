@@ -247,3 +247,5 @@ providers:
     iconcdn: fontawesome
 # CNZZ id
 # cnzz: 1277890992
+copyright:
+    enable: false

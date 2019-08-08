@@ -92,7 +92,13 @@
     </div>
 </div>
 <% } %>
-
+<% if (!index && (theme.copyright.enable || post.copyright)){ %>
+    <div class="card">
+        <div class="card-content">
+            <%- partial('copyright') %>
+        </div>
+    </div>
+<% } %>
 <% if (!index && (post.prev || post.next)) { %>
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
